@@ -1,0 +1,92 @@
+/* Centering the game board */
+.game {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 80px); /* Adjust the board size */
+  }
+
+  .square {
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.square:hover {
+  background-color: #ddd;
+}
+
+/* Different colors for X and O */
+.x {
+  color: #ff5733; /* Orange for X */
+}
+
+.o {
+  color: #33c1ff; /* Blue for O */
+}
+
+/* Highlighting the winning squares */
+.winning {
+  background-color: #ffcc00; /* Yellow for winning combination */
+  color: #fff;
+  animation: flash 0.5s alternate infinite;
+}
+
+/* Simple flash animation */
+@keyframes flash {
+  0% {
+    background-color: #ffcc00;
+  }
+  100% {
+    background-color: #ffd700;
+  }
+}
+
+/* Styling the Restart button */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
